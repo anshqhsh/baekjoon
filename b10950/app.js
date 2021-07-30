@@ -1,14 +1,16 @@
 const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt'; //컴퓨터에서 테스트 하는것과 제출할때를 나눠서 
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
-
-const inputCase = +input[0]; //Numver(input[0]) 넘버로 쓰는것과 같은효과 
-const inputTestCase = [];
-for(let i = 1; i<inputCase; i++){
-    inputTestCase.push
+const testArray = [];
+for(let i =1; i<= +input[0]; i++){
+    const testValue = input[i].split(' ').map((item) => +item);
+    testArray.push({ A: testValue[0], B: testValue[1] });
 }
-solution(inputC, inputTestCase);
-
-
-function solution(C, testCase) {
+solution(+input[0], testArray);
+function solution(T, testcaseArray) {
+    for (let i = 0; i < T; ++i) {
+        const A = testcaseArray[i].A;
+        const B = testcaseArray[i].B;
+        console.log(A + B);
+    }
 }

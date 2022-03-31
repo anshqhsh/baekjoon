@@ -12,6 +12,7 @@ function validAnagram(char1, char2) {
   for (let i = 0; i < char2.length; i++) {
     let letter = char2[i];
     if (!lookup[letter]) {
+      console.log(lookup[letter]);
       return false;
     } else {
       lookup[letter] -= 1;
